@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 
 // Icons
 const I = {
@@ -80,6 +81,27 @@ const I = {
   ),
 }
 
+// Animation variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 60 },
+  visible: { opacity: 1, y: 0 }
+}
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15
+    }
+  }
+}
+
+const cardVariant = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 }
+}
+
 export default function Home() {
   const [formData, setFormData] = useState({
     name: '', company: '', email: '', phone: '', scope: '', message: ''
@@ -121,53 +143,73 @@ export default function Home() {
         <div className="hero-content">
           <div className="wrap">
             <div className="hero-grid">
-              <div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
                 <div className="hero-tag mono">
                   <span className="dot"></span>
-                  <span>EST. 2003 — SINGAPORE</span>
+                  <span>EST. 1989 — SINGAPORE</span>
                 </div>
-                <h1>
-                  Trusted Mechanical Engineering for{" "}
-                  <span className="underline">Singapore's Gas</span>{" "}
-                  &amp; <span className="accent">Process Industries</span>.
-                </h1>
-                <p className="hero-sub">
+                <motion.h1
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                >
+                  20+ Years Delivering Safety-Critical Mechanical Solutions to Singapore's Gas and Process Industries
+                </motion.h1>
+                <motion.p 
+                  className="hero-sub"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                >
                   From semiconductor gas plants to hydrogen trailer servicing — LS Lee Engineering
-                  delivers safety-critical mechanical solutions backed by 20+ years of frontline
+                  delivers safety-critical mechanical solutions backed by decades of frontline
                   experience across South-East Asia.
-                </p>
-                <div className="hero-ctas">
+                </motion.p>
+                <motion.div 
+                  className="hero-ctas"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                >
                   <a href="#industries" className="btn btn-primary">
                     Explore Our Industries <I.Arrow className="arrow" />
                   </a>
                   <a href="#projects" className="btn btn-outline">View Projects</a>
+                </motion.div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              >
+                <div className="hero-meta-container">
+                  <div className="hero-meta">
+                    <div><div className="k">20+</div><div className="l">Years Operating</div></div>
+                    <div><div className="k">450+</div><div className="l">Projects Delivered</div></div>
+                    <div><div className="k">3,200+</div><div className="l">Trailers Certified</div></div>
+                    <div><div className="k">2.4M</div><div className="l">Safe Manhours</div></div>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <div className="hero-meta">
-                  <div><div className="k">20+</div><div className="l">Years Operating</div></div>
-                  <div><div className="k">450+</div><div className="l">Projects Delivered</div></div>
-                  <div><div className="k">3,200+</div><div className="l">Trailers Certified</div></div>
-                  <div><div className="k">2.4M</div><div className="l">Safe Manhours</div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="ticker">
-          <div className="wrap">
-            <div className="ticker-row">
-              <div><span className="live"></span> LIVE / SITES ACTIVE: 14</div>
-              <div>ISO 9001:2015 · ISO 45001 · bizSAFE STAR</div>
-              <div>SINGAPORE · JURONG ISLAND · TUAS</div>
-              <div>SCROLL ↓</div>
+              </motion.div>
             </div>
           </div>
         </div>
       </section>
 
       {/* INDUSTRIES */}
-      <section id="industries" className="section">
+      <motion.section 
+        id="industries" 
+        className="section"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        variants={fadeInUp}
+      >
         <div className="wrap">
           <div className="sec-head">
             <div>
@@ -179,14 +221,25 @@ export default function Home() {
               We engineer for the operators that keep them running.
             </p>
           </div>
-          <div className="ind-grid">
+          <motion.div 
+            className="ind-grid"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
             {[
               { num: "01", icon: <I.Chip />, title: "Semiconductor", desc: "Gas plant construction, integration, and maintenance for wafer fabrication facilities and tool hook-ups.", tags: ["UHP GAS", "FAB BUILD", "HOOK-UP"] },
               { num: "02", icon: <I.Server />, title: "Data Center", desc: "Hydrogen pipeline infrastructure for next-generation power systems and resilient backup architectures.", tags: ["H₂ PIPING", "BACKUP PWR"] },
               { num: "03", icon: <I.Plant />, title: "Industrial Gas & Process Plants", desc: "Turnkey project engineering and long-term plant maintenance across air separation, specialty gas and chemical sites.", tags: ["TURNKEY", "ASU", "MAINTENANCE"] },
               { num: "04", icon: <I.H2 />, title: "New Energy / Hydrogen", desc: "Hydrogen infrastructure engineering, tube trailer testing and certification for the regional clean-energy transition.", tags: ["H₂", "CERTIFICATION", "TUBE TRAILER"] },
             ].map((it) => (
-              <div className="ind-card" key={it.num}>
+              <motion.div 
+                className="ind-card" 
+                key={it.num}
+                variants={cardVariant}
+                transition={{ duration: 0.5 }}
+              >
                 <div className="ind-top">
                   <div className="ind-icon">{it.icon}</div>
                   <div className="ind-num">[ {it.num} / 04 ]</div>
@@ -195,14 +248,22 @@ export default function Home() {
                 <p>{it.desc}</p>
                 <div className="ind-tags">{it.tags.map(t => <span key={t} className="ind-tag">{t}</span>)}</div>
                 <div className="ind-more">Learn More <I.Arrow /></div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* SERVICES */}
-      <section id="services" className="section gray">
+      <motion.section 
+        id="services" 
+        className="section gray"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        variants={fadeInUp}
+      >
         <div className="wrap">
           <div className="sec-head">
             <div>
@@ -213,14 +274,25 @@ export default function Home() {
               Four integrated practices, one accountable contractor. End-to-end execution from design office to plant floor.
             </p>
           </div>
-          <div className="svc-grid">
+          <motion.div 
+            className="svc-grid"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
             {[
               { num: "01", tag: "PROJECT ENGINEERING", icon: <I.Wrench />, title: "Project Engineering Services", bullets: ["Detailed design & 3D modelling", "Skid & module fabrication", "Site installation & hook-up", "Commissioning & start-up"] },
               { num: "02", tag: "OPERATIONS", icon: <I.Gauge />, title: "Plant Maintenance & Servicing", bullets: ["Preventive & predictive PM", "Shutdown & turnaround support", "Rotating equipment overhaul", "24/7 on-call response"] },
               { num: "03", tag: "CERTIFICATION", icon: <I.Trailer />, title: "Hydrogen & Tube Trailer Testing", bullets: ["Hydrostatic & pneumatic testing", "DOT / ISO recertification", "Valve & manifold servicing", "Composite cylinder inspection"] },
               { num: "04", tag: "FABRICATION", icon: <I.Snow />, title: "Cryogenic Hose Fabrication", bullets: ["LIN / LOX / LAR / LNG service", "Vacuum-insulated assemblies", "Custom lengths & end fittings", "PED & ASME compliant"] },
             ].map((it) => (
-              <div className="svc-row" key={it.num}>
+              <motion.div 
+                className="svc-row" 
+                key={it.num}
+                variants={cardVariant}
+                transition={{ duration: 0.5 }}
+              >
                 <div className="svc-num">{it.num}</div>
                 <div className="svc-title-cell">
                   <div className="svc-tag mono">{it.tag}</div>
@@ -233,14 +305,22 @@ export default function Home() {
                   </ul>
                 </div>
                 <div className="svc-cta"><a>Detail <I.Arrow /></a></div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* GROUP */}
-      <section id="group" className="section dark">
+      <motion.section 
+        id="group" 
+        className="section dark"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        variants={fadeInUp}
+      >
         <div className="wrap">
           <div className="grp-intro">
             <div>
@@ -253,13 +333,25 @@ export default function Home() {
               Three specialized companies under shared ownership. Mechanical, electrical, and gas supply capability deployed as one integrated team across every project phase.
             </p>
           </div>
-          <div className="grp-cards">
+          <motion.div 
+            className="grp-cards"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {[
-              { abbr: "LS", color: "#FF5722", name: "LS Lee", role: "Mechanical Engineering", desc: "Mechanical project execution, plant maintenance, fabrication and testing for gas and process sites.", caps: ["MECHANICAL CONTRACTING", "FABRICATION", "TESTING & CERT"] },
-              { abbr: "CN", color: "#00BCD4", name: "CONSEN", role: "Electrical & Instrumentation", desc: "E&I design, installation, control systems and instrumentation calibration across plant operations.", caps: ["ELECTRICAL INSTALL", "INSTRUMENTATION", "CONTROL SYSTEMS"] },
+              { abbr: "LS", color: "#DC2626", name: "LS Lee", role: "Mechanical Engineering", desc: "Mechanical project execution, plant maintenance, fabrication and testing for gas and process sites.", caps: ["MECHANICAL CONTRACTING", "FABRICATION", "TESTING & CERT"] },
+              { abbr: "CN", color: "#2563EB", name: "CONSEN", role: "Electrical & Instrumentation", desc: "E&I design, installation, control systems and instrumentation calibration across plant operations.", caps: ["ELECTRICAL INSTALL", "INSTRUMENTATION", "CONTROL SYSTEMS"] },
               { abbr: "GP", color: "#F4F5F7", txt: "#0A1628", name: "GASPL", role: "Industrial Gas Supply", desc: "Industrial gas supply, distribution logistics and on-site gas system management for industrial clients.", caps: ["GAS SUPPLY", "LOGISTICS", "SITE OPERATIONS"] },
             ].map((co, i) => (
-              <div className="grp-card" key={i} style={{ color: co.txt || '#FFF' }}>
+              <motion.div 
+                className="grp-card" 
+                key={i} 
+                style={{ color: co.txt || '#FFF' }}
+                variants={cardVariant}
+                transition={{ duration: 0.5 }}
+              >
                 <div className="grp-card-head">
                   <div className="grp-abbr" style={{ borderColor: co.color, color: co.color }}>{co.abbr}</div>
                 </div>
@@ -269,14 +361,22 @@ export default function Home() {
                 <div className="grp-caps">
                   {co.caps.map(c => <span key={c}>{c}</span>)}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* PROJECTS */}
-      <section id="projects" className="section">
+      <motion.section 
+        id="projects" 
+        className="section"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        variants={fadeInUp}
+      >
         <div className="wrap">
           <div className="sec-head">
             <div>
@@ -284,10 +384,16 @@ export default function Home() {
               <h2>Selected <span className="accent">Project Portfolio</span></h2>
             </div>
             <p className="sec-intro">
-              Representative mechanical projects across semiconductor, industrial gas, and energy infrastructure since 2003.
+              Representative mechanical projects across semiconductor, industrial gas, and energy infrastructure since 1989.
             </p>
           </div>
-          <div className="prj-grid">
+          <motion.div 
+            className="prj-grid"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
             {[
               { title: "Fab-14 UHP Gas Distribution", scope: "PROJECT ENGINEERING", desc: "Design, fabrication, and installation of ultra-high-purity gas distribution network for new wafer fab expansion.", loc: "Woodlands" },
               { title: "ASU Plant Turnaround", scope: "MAINTENANCE", desc: "Major shutdown coordination and equipment overhaul across air separation unit cold box and compressor systems.", loc: "Jurong Island" },
@@ -296,7 +402,12 @@ export default function Home() {
               { title: "Process Gas Metering Skid", scope: "PROJECT ENGINEERING", desc: "Turnkey design-build of gas metering and flow control skid package for chemical process application.", loc: "Jurong Island" },
               { title: "Data Center H₂ Backup System", scope: "PROJECT ENGINEERING", desc: "Hydrogen fuel cell backup power infrastructure including piping, safety systems, and leak detection.", loc: "One-North" },
             ].map((prj, i) => (
-              <div className="prj-card" key={i}>
+              <motion.div 
+                className="prj-card" 
+                key={i}
+                variants={cardVariant}
+                transition={{ duration: 0.5 }}
+              >
                 <div className="prj-img">[ PROJECT IMAGE ]</div>
                 <div className="prj-body">
                   <h3>{prj.title}</h3>
@@ -307,14 +418,22 @@ export default function Home() {
                     <div className="more">View <I.Arrow /></div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* SAFETY */}
-      <section id="safety" className="section gray">
+      <motion.section 
+        id="safety" 
+        className="section gray"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        variants={fadeInUp}
+      >
         <div className="wrap">
           <div className="sec-head">
             <div>
@@ -326,7 +445,12 @@ export default function Home() {
             </p>
           </div>
           <div className="sft-grid">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               <div className="sft-stmt">
                 <div className="lg">2.4 Million Safe Manhours Without Lost-Time Incident</div>
                 <p>
@@ -336,8 +460,13 @@ export default function Home() {
                   From daily toolbox talks to advanced HAZOP reviews, safety is integrated into project planning, execution, and closeout.
                 </p>
               </div>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               <div className="cert-grid">
                 {[
                   { mark: "Q", issuer: "SAC-SINGLAS", title: "ISO 9001:2015", sub: "Quality Management" },
@@ -359,13 +488,22 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CONTACT */}
-      <section id="contact" className="section" style={{ paddingTop: 120, paddingBottom: 120 }}>
+      <motion.section 
+        id="contact" 
+        className="section" 
+        style={{ paddingTop: 120, paddingBottom: 120 }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        variants={fadeInUp}
+      >
         <div className="wrap">
           <div className="ct-split">
             <div className="ct-left">
@@ -456,7 +594,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   )
 }
