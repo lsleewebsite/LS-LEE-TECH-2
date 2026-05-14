@@ -200,7 +200,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* INDUSTRIES */}
+     {/* INDUSTRIES */}
       <motion.section 
         id="industries" 
         className="section"
@@ -229,10 +229,10 @@ export default function Home() {
             viewport={{ once: true, margin: "-50px" }}
           >
             {[
-              { num: "01", icon: <I.Chip />, title: "Semiconductor", desc: "Gas plant construction, integration, and maintenance for wafer fabrication facilities and tool hook-ups.", tags: ["UHP GAS", "FAB BUILD", "HOOK-UP"] },
-              { num: "02", icon: <I.Server />, title: "Data Center", desc: "Hydrogen pipeline infrastructure for next-generation power systems and resilient backup architectures.", tags: ["H₂ PIPING", "BACKUP PWR"] },
-              { num: "03", icon: <I.Plant />, title: "Industrial Gas & Process Plants", desc: "Turnkey project engineering and long-term plant maintenance across air separation, specialty gas and chemical sites.", tags: ["TURNKEY", "ASU", "MAINTENANCE"] },
-              { num: "04", icon: <I.H2 />, title: "New Energy / Hydrogen", desc: "Hydrogen infrastructure engineering, tube trailer testing and certification for the regional clean-energy transition.", tags: ["H₂", "CERTIFICATION", "TUBE TRAILER"] },
+              { num: "01", icon: <I.Chip />, title: "Semiconductor", desc: "Gas process plant construction, integration and maintenance for semiconductor manufacturing." },
+              { num: "02", icon: <I.Server />, title: "Data Center", desc: "Hydrogen pipeline infrastructure and gas systems support for data centre energy requirements." },
+              { num: "03", icon: <I.Plant />, title: "Industrial Gas & Process", desc: "Turnkey project engineering, plant integration and maintenance for gas and process plants." },
+              { num: "04", icon: <I.H2 />, title: "New Energy / Hydrogen", desc: "Hydrogen trailer testing, servicing, refurbishment and certification support." },
             ].map((it) => (
               <motion.div 
                 className="ind-card" 
@@ -246,7 +246,6 @@ export default function Home() {
                 </div>
                 <h3>{it.title}</h3>
                 <p>{it.desc}</p>
-                <div className="ind-tags">{it.tags.map(t => <span key={t} className="ind-tag">{t}</span>)}</div>
                 <div className="ind-more">Learn More <I.Arrow /></div>
               </motion.div>
             ))}
@@ -305,62 +304,6 @@ export default function Home() {
                   </ul>
                 </div>
                 <div className="svc-cta"><a>Detail <I.Arrow /></a></div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </motion.section>
-
-      {/* GROUP */}
-      <motion.section 
-        id="group" 
-        className="section dark"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6 }}
-        variants={fadeInUp}
-      >
-        <div className="wrap">
-          <div className="grp-intro">
-            <div>
-              <div className="sec-eyebrow" style={{ color: 'rgba(255,255,255,0.6)' }}>
-                <span className="bar"></span><span className="num">SECTION / 04 — GROUP</span>
-              </div>
-              <h2>Complete Engineering Solutions Through <span className="accent">Group Integration</span></h2>
-            </div>
-            <p className="sec-intro" style={{ color: 'rgba(255,255,255,0.75)' }}>
-              Three specialized companies under shared ownership. Mechanical, electrical, and gas supply capability deployed as one integrated team across every project phase.
-            </p>
-          </div>
-          <motion.div 
-            className="grp-cards"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {[
-              { abbr: "LS", color: "#DC2626", name: "LS Lee", role: "Mechanical Engineering", desc: "Mechanical project execution, plant maintenance, fabrication and testing for gas and process sites.", caps: ["MECHANICAL CONTRACTING", "FABRICATION", "TESTING & CERT"] },
-              { abbr: "CN", color: "#2563EB", name: "CONSEN", role: "Electrical & Instrumentation", desc: "E&I design, installation, control systems and instrumentation calibration across plant operations.", caps: ["ELECTRICAL INSTALL", "INSTRUMENTATION", "CONTROL SYSTEMS"] },
-              { abbr: "GP", color: "#F4F5F7", txt: "#0A1628", name: "GASPL", role: "Industrial Gas Supply", desc: "Industrial gas supply, distribution logistics and on-site gas system management for industrial clients.", caps: ["GAS SUPPLY", "LOGISTICS", "SITE OPERATIONS"] },
-            ].map((co, i) => (
-              <motion.div 
-                className="grp-card" 
-                key={i} 
-                style={{ color: co.txt || '#FFF' }}
-                variants={cardVariant}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="grp-card-head">
-                  <div className="grp-abbr" style={{ borderColor: co.color, color: co.color }}>{co.abbr}</div>
-                </div>
-                <h4>{co.name}</h4>
-                <div className="grp-role">{co.role}</div>
-                <p>{co.desc}</p>
-                <div className="grp-caps">
-                  {co.caps.map(c => <span key={c}>{c}</span>)}
-                </div>
               </motion.div>
             ))}
           </motion.div>
