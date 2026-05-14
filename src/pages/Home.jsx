@@ -200,7 +200,7 @@ export default function Home() {
         </div>
       </section>
 
-     {/* INDUSTRIES */}
+      {/* INDUSTRIES */}
       <motion.section 
         id="industries" 
         className="section"
@@ -213,7 +213,6 @@ export default function Home() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <div className="sec-eyebrow"><span className="bar"></span><span className="num">SECTION / 02 — VERTICALS</span></div>
               <h2>Industries <span className="accent">We Serve</span></h2>
             </div>
             <p className="sec-intro">
@@ -229,20 +228,19 @@ export default function Home() {
             viewport={{ once: true, margin: "-50px" }}
           >
             {[
-              { num: "01", icon: <I.Chip />, title: "Semiconductor", desc: "Gas process plant construction, integration and maintenance for semiconductor manufacturing." },
-              { num: "02", icon: <I.Server />, title: "Data Center", desc: "Hydrogen pipeline infrastructure and gas systems support for data centre energy requirements." },
-              { num: "03", icon: <I.Plant />, title: "Industrial Gas & Process", desc: "Turnkey project engineering, plant integration and maintenance for gas and process plants." },
-              { num: "04", icon: <I.H2 />, title: "New Energy / Hydrogen", desc: "Hydrogen trailer testing, servicing, refurbishment and certification support." },
-            ].map((it) => (
+              { icon: <I.Chip />, title: "Semiconductor", desc: "Gas process plant construction, integration and maintenance for semiconductor manufacturing." },
+              { icon: <I.Server />, title: "Data Center", desc: "Hydrogen pipeline infrastructure and gas systems support for data centre energy requirements." },
+              { icon: <I.Plant />, title: "Industrial Gas & Process", desc: "Turnkey project engineering, plant integration and maintenance for gas and process plants." },
+              { icon: <I.H2 />, title: "New Energy / Hydrogen", desc: "Hydrogen trailer testing, servicing, refurbishment and certification support." },
+            ].map((it, i) => (
               <motion.div 
                 className="ind-card" 
-                key={it.num}
+                key={i}
                 variants={cardVariant}
                 transition={{ duration: 0.5 }}
               >
                 <div className="ind-top">
                   <div className="ind-icon">{it.icon}</div>
-                  <div className="ind-num">[ {it.num} / 04 ]</div>
                 </div>
                 <h3>{it.title}</h3>
                 <p>{it.desc}</p>
@@ -266,7 +264,6 @@ export default function Home() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <div className="sec-eyebrow"><span className="bar"></span><span className="num">SECTION / 03 — CAPABILITIES</span></div>
               <h2>Our Engineering <span className="accent">Capabilities</span></h2>
             </div>
             <p className="sec-intro">
@@ -285,10 +282,10 @@ export default function Home() {
               { num: "02", tag: "OPERATIONS", icon: <I.Gauge />, title: "Plant Maintenance & Servicing", bullets: ["Preventive & predictive PM", "Shutdown & turnaround support", "Rotating equipment overhaul", "24/7 on-call response"] },
               { num: "03", tag: "CERTIFICATION", icon: <I.Trailer />, title: "Hydrogen & Tube Trailer Testing", bullets: ["Hydrostatic & pneumatic testing", "DOT / ISO recertification", "Valve & manifold servicing", "Composite cylinder inspection"] },
               { num: "04", tag: "FABRICATION", icon: <I.Snow />, title: "Cryogenic Hose Fabrication", bullets: ["LIN / LOX / LAR / LNG service", "Vacuum-insulated assemblies", "Custom lengths & end fittings", "PED & ASME compliant"] },
-            ].map((it) => (
+            ].map((it, i) => (
               <motion.div 
                 className="svc-row" 
-                key={it.num}
+                key={i}
                 variants={cardVariant}
                 transition={{ duration: 0.5 }}
               >
@@ -323,7 +320,6 @@ export default function Home() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <div className="sec-eyebrow"><span className="bar"></span><span className="num">SECTION / 05 — TRACK RECORD</span></div>
               <h2>Selected <span className="accent">Project Portfolio</span></h2>
             </div>
             <p className="sec-intro">
@@ -380,7 +376,6 @@ export default function Home() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <div className="sec-eyebrow"><span className="bar"></span><span className="num">SECTION / 06 — SAFETY</span></div>
               <h2>Safety First, <span className="accent">Always</span></h2>
             </div>
             <p className="sec-intro">
@@ -450,9 +445,6 @@ export default function Home() {
         <div className="wrap">
           <div className="ct-split">
             <div className="ct-left">
-              <div className="sec-eyebrow" style={{ color: "rgba(255,255,255,0.7)" }}>
-                <span className="bar"></span><span className="num">SECTION / 07 — CONTACT</span>
-              </div>
               <h2>Ready to Discuss <span className="accent">Your Project?</span></h2>
               <p className="sub">
                 Whether you're scoping a new plant, planning a turnaround, or recertifying a fleet —
