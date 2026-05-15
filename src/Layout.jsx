@@ -21,20 +21,18 @@ export default function Layout({ currentPageName, children }) {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          height: '80px'
+          height: '110px'
         }}>
           {/* Logo */}
           <Link to="/Home" style={{ textDecoration: 'none' }}>
-            <div style={{ 
-              height: '40px', 
-              fontWeight: 800, 
-              fontSize: '18px',
-              display: 'flex',
-              alignItems: 'center',
-              color: '#0F172A'
-            }}>
-              LS LEE TECHNOLOGY
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="LS Lee Technology" 
+              style={{ 
+                height: '80px',
+                marginLeft: '-15px'
+              }} 
+            />
           </Link>
 
           {/* Nav Links */}
@@ -45,10 +43,10 @@ export default function Layout({ currentPageName, children }) {
                 to={`/${item}`}
                 style={{
                   textDecoration: 'none',
-                  fontSize: '14px',
+                  fontSize: '17px',
                   fontWeight: 600,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.05em',
+                  fontFamily: 'IBM Plex Sans, sans-serif',
+                  letterSpacing: '0.02em',
                   color: currentPageName === item ? '#DC2626' : '#0F172A',
                   borderBottom: currentPageName === item ? '2px solid #DC2626' : 'none',
                   paddingBottom: '4px',
@@ -63,15 +61,27 @@ export default function Layout({ currentPageName, children }) {
             
             <Link to="/Contact">
               <button style={{
-                padding: '12px 24px',
+                padding: '14px 28px',
                 backgroundColor: '#DC2626',
                 color: '#FFFFFF',
                 border: '2px solid #DC2626',
                 fontWeight: 700,
-                fontSize: '12px',
+                fontSize: '15px',
+                fontFamily: 'IBM Plex Sans, sans-serif',
                 textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
+                letterSpacing: '0.05em',
+                cursor: 'pointer',
+                transition: 'all 0.15s'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#B91C1C'
+                e.target.style.borderColor = '#B91C1C'
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = '#DC2626'
+                e.target.style.borderColor = '#DC2626'
+              }}
+              >
                 START PROJECT
               </button>
             </Link>
@@ -100,17 +110,17 @@ export default function Layout({ currentPageName, children }) {
           }}>
             {/* Company Info */}
             <div>
-              <div style={{ 
-                height: '36px', 
-                fontWeight: 800, 
-                fontSize: '16px',
-                marginBottom: '16px',
-                color: '#FFFFFF'
-              }}>
-                LS LEE TECHNOLOGY
-              </div>
+              <img 
+                src="/logo.png" 
+                alt="LS Lee Technology" 
+                style={{ 
+                  height: '60px',
+                  marginBottom: '16px',
+                  filter: 'brightness(0) invert(1)'
+                }} 
+              />
               <p style={{ fontSize: '13px', color: '#94A3B8', lineHeight: 1.6 }}>
-                Mechanical engineering contractor serving Singapore's gas and process industries since 2003.
+                Mechanical engineering contractor serving Singapore's gas and process industries since 1989.
               </p>
             </div>
 
