@@ -203,7 +203,7 @@ export default function Home() {
               }}
             >
               {[
-                { value: '37+', label: 'Lorem ipsum dolor' },
+                { value: '37+', label: 'Years Of Experience' },
                 { value: 'XX', label: 'Sit amet consectetur' },
                 { value: 'XX', label: 'Adipiscing elit sed' },
                 { value: 'XX', label: 'Do eiusmod tempor' }
