@@ -205,8 +205,8 @@ export default function Home() {
               {[
                 { value: '35+', label: 'Years Operating' },
                 { value: 'XX', label: 'PlaceHolder' },
-                { value: '3,200+', label: 'PlaceHolder' },
-                { value: '2.4M', label: 'PlaceHolder' }
+                { value: 'XX+', label: 'PlaceHolder' },
+                { value: 'XX', label: 'PlaceHolder' }
               ].map((stat, i) => (
                 <motion.div
                   key={i}
