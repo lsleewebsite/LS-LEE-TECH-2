@@ -203,10 +203,10 @@ export default function Home() {
               }}
             >
               {[
-                { value: '20+', label: 'Years Operating' },
-                { value: '450+', label: 'Projects Delivered' },
-                { value: '3,200+', label: 'Trailers Certified' },
-                { value: '2.4M', label: 'Safe Manhours' }
+                { value: '35+', label: 'Years Operating' },
+                { value: 'XX', label: 'PlaceHolder' },
+                { value: '3,200+', label: 'PlaceHolder' },
+                { value: '2.4M', label: 'PlaceHolder' }
               ].map((stat, i) => (
                 <motion.div
                   key={i}
