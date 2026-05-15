@@ -93,7 +93,7 @@ img { max-width: 100%; display: block; }
 
 .hero {
   position: relative; 
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex; 
   align-items: center;
   color: var(--paper);
@@ -129,7 +129,7 @@ img { max-width: 100%; display: block; }
   display: grid; 
   grid-template-columns: 1.2fr 1fr; 
   gap: 80px; 
-  align-items: start;
+  align-items: center;
 }
 @media (max-width: 920px) { 
   .hero-grid { grid-template-columns: 1fr; gap: 48px; }  
