@@ -360,7 +360,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* PROJECTS */}
+     {/* PROJECTS */}
       <motion.section 
         id="projects" 
         className="section"
@@ -375,9 +375,6 @@ export default function Home() {
             <div>
               <h2>Selected <span className="accent">Project Portfolio</span></h2>
             </div>
-            <p className="sec-intro">
-              Representative mechanical projects across semiconductor, industrial gas, and energy infrastructure since 1989.
-            </p>
           </div>
           <motion.div 
             className="prj-grid"
@@ -390,9 +387,6 @@ export default function Home() {
               { title: "Fab-14 UHP Gas Distribution", scope: "PROJECT ENGINEERING", desc: "Design, fabrication, and installation of ultra-high-purity gas distribution network for new wafer fab expansion.", loc: "Woodlands" },
               { title: "ASU Plant Turnaround", scope: "MAINTENANCE", desc: "Major shutdown coordination and equipment overhaul across air separation unit cold box and compressor systems.", loc: "Jurong Island" },
               { title: "H₂ Tube Trailer Recertification", scope: "TESTING & CERTIFICATION", desc: "DOT recertification program for fleet of 40+ hydrogen tube trailers serving regional industrial customers.", loc: "Tuas" },
-              { title: "LNG Terminal Hose Assemblies", scope: "FABRICATION", desc: "Custom cryogenic hose fabrication for liquefied natural gas loading and offloading operations.", loc: "Jurong Island" },
-              { title: "Process Gas Metering Skid", scope: "PROJECT ENGINEERING", desc: "Turnkey design-build of gas metering and flow control skid package for chemical process application.", loc: "Jurong Island" },
-              { title: "Data Center H₂ Backup System", scope: "PROJECT ENGINEERING", desc: "Hydrogen fuel cell backup power infrastructure including piping, safety systems, and leak detection.", loc: "One-North" },
             ].map((prj, i) => (
               <motion.div 
                 className="prj-card" 
@@ -412,6 +406,19 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
+          </motion.div>
+          
+          {/* See More Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            style={{ textAlign: 'center', marginTop: '48px' }}
+          >
+            <a href="/projects" className="btn btn-primary">
+              See More Projects <I.Arrow className="arrow" />
+            </a>
           </motion.div>
         </div>
       </motion.section>
