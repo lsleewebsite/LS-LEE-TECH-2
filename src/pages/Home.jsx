@@ -273,9 +273,6 @@ export default function Home() {
             <div>
               <h2>Industries <span className="accent">We Serve</span></h2>
             </div>
-            <p className="sec-intro">
-              Four high-stakes verticals where uptime, purity, and pressure integrity are non-negotiable.
-              We engineer for the operators that keep them running.
             </p>
           </div>
           <motion.div 
