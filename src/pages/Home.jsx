@@ -169,7 +169,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                From semiconductor gas plants to hydrogen trailer servicing — LS Lee Engineering
+                From semiconductor gas plants to hydrogen trailer servicing, L.S. Lee Technology Pte Ltd
                 delivers safety-critical mechanical solutions backed by decades of frontline
                 experience across South-East Asia.
               </motion.p>
