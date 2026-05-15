@@ -273,7 +273,6 @@ export default function Home() {
             <div>
               <h2>Industries <span className="accent">We Serve</span></h2>
             </div>
-            </p>
           </div>
           <motion.div 
             className="ind-grid"
