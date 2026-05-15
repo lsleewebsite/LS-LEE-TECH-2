@@ -332,10 +332,10 @@ export default function Home() {
             viewport={{ once: true, margin: "-50px" }}
           >
             {[
-              { num: "01", tag: "PROJECT ENGINEERING", icon: <I.Wrench />, title: "Project Engineering Services", bullets: ["Detailed design & 3D modelling", "Skid & module fabrication", "Site installation & hook-up", "Commissioning & start-up"] },
-              { num: "02", tag: "OPERATIONS", icon: <I.Gauge />, title: "Plant Maintenance & Servicing", bullets: ["Preventive & predictive PM", "Shutdown & turnaround support", "Rotating equipment overhaul", "24/7 on-call response"] },
-              { num: "03", tag: "CERTIFICATION", icon: <I.Trailer />, title: "Hydrogen & Tube Trailer Testing", bullets: ["Hydrostatic & pneumatic testing", "DOT / ISO recertification", "Valve & manifold servicing", "Composite cylinder inspection"] },
-              { num: "04", tag: "FABRICATION", icon: <I.Snow />, title: "Cryogenic Hose Fabrication", bullets: ["LIN / LOX / LAR / LNG service", "Vacuum-insulated assemblies", "Custom lengths & end fittings", "PED & ASME compliant"] },
+              { num: "01", icon: <I.Wrench />, title: "Project Engineering", bullets: ["Gas plant equipment erection, installation and integration", "Underground gas piping", "Steel structure fabrication", "Metering skid station fabrication"] },
+              { num: "02", icon: <I.Gauge />, title: "Plant Maintenance", bullets: ["Process plant routine and shutdown maintenance", "Metering skid servicing", "Underground pipeline servicing"] },
+              { num: "03", icon: <I.Trailer />, title: "Hydrogen Trailer Testing", bullets: ["HP tube testing and certification", "Tube trailer servicing", "Tube trailer refurbishment support", "Related skid support"] },
+              { num: "04", icon: <I.Snow />, title: "Cryogenic Systems", bullets: ["Cryogenic hose fabrication", "Cryogenic hose repair", "Cryogenic hose maintenance", "Industrial gas applications"] },
             ].map((it, i) => (
               <motion.div 
                 className="svc-row" 
@@ -345,7 +345,6 @@ export default function Home() {
               >
                 <div className="svc-num">{it.num}</div>
                 <div className="svc-title-cell">
-                  <div className="svc-tag mono">{it.tag}</div>
                   <h3>{it.title}</h3>
                   <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 8, opacity: 0.7 }}>{it.icon}</div>
                 </div>
