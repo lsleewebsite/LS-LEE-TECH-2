@@ -159,7 +159,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                20+ Years Delivering Safety-Critical Mechanical Solutions to Singapore's Gas and Process Industries
+                37+ Years Delivering Safety-Critical Mechanical Solutions to Singapore's Gas and Process Industries
               </motion.h1>
               
               <motion.p 
@@ -203,7 +203,7 @@ export default function Home() {
               }}
             >
               {[
-                { value: '40+', label: 'Lorem ipsum dolor' },
+                { value: '37+', label: 'Lorem ipsum dolor' },
                 { value: 'XX', label: 'Sit amet consectetur' },
                 { value: 'XX', label: 'Adipiscing elit sed' },
                 { value: 'XX', label: 'Do eiusmod tempor' }
