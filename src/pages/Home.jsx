@@ -184,7 +184,7 @@ export default function Home() {
                 <a href="#industries" className="btn btn-primary">
                   Explore Our Industries <I.Arrow className="arrow" />
                 </a>
-                <a href="#projects" className="btn btn-outline">View Projects</a>
+                <a href="/projects" className="btn btn-outline">View Projects</a>
               </motion.div>
             </motion.div>
 
@@ -203,10 +203,10 @@ export default function Home() {
               }}
             >
               {[
-                { value: '35+', label: 'Years Operating' },
-                { value: 'XX', label: 'PlaceHolder' },
-                { value: 'XX+', label: 'PlaceHolder' },
-                { value: 'XX', label: 'PlaceHolder' }
+                { value: '40+', label: 'Lorem ipsum dolor' },
+                { value: 'XX', label: 'Sit amet consectetur' },
+                { value: 'XX', label: 'Adipiscing elit sed' },
+                { value: 'XX', label: 'Do eiusmod tempor' }
               ].map((stat, i) => (
                 <motion.div
                   key={i}
@@ -302,6 +302,19 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
+
+          {/* See More Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            style={{ textAlign: 'center', marginTop: '48px' }}
+          >
+            <a href="/industries" className="btn btn-primary">
+              See More <I.Arrow className="arrow" />
+            </a>
+          </motion.div>
         </div>
       </motion.section>
 
@@ -320,9 +333,6 @@ export default function Home() {
             <div>
               <h2>Our Engineering <span className="accent">Capabilities</span></h2>
             </div>
-            <p className="sec-intro">
-              Four integrated practices, one accountable contractor. End-to-end execution from design office to plant floor.
-            </p>
           </div>
           <motion.div 
             className="svc-grid"
@@ -357,10 +367,23 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
+
+          {/* See More Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            style={{ textAlign: 'center', marginTop: '48px' }}
+          >
+            <a href="/services" className="btn btn-primary">
+              See More <I.Arrow className="arrow" />
+            </a>
+          </motion.div>
         </div>
       </motion.section>
 
-     {/* PROJECTS */}
+      {/* PROJECTS */}
       <motion.section 
         id="projects" 
         className="section"
@@ -417,7 +440,7 @@ export default function Home() {
             style={{ textAlign: 'center', marginTop: '48px' }}
           >
             <a href="/projects" className="btn btn-primary">
-              See More Projects <I.Arrow className="arrow" />
+              See More <I.Arrow className="arrow" />
             </a>
           </motion.div>
         </div>
@@ -465,14 +488,11 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="cert-grid">
+              <div className="cert-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
                 {[
                   { mark: "Q", issuer: "SAC-SINGLAS", title: "ISO 9001:2015", sub: "Quality Management" },
                   { mark: "O", issuer: "SAC-SINGLAS", title: "ISO 45001", sub: "OH&S Management" },
                   { mark: "★", issuer: "WSH COUNCIL", title: "bizSAFE STAR", sub: "Workplace Safety" },
-                  { mark: "P", issuer: "BCA", title: "CoreTrade", sub: "Plumbing & Piping" },
-                  { mark: "E", issuer: "EMA", title: "LEW Licence", sub: "Electrical Works" },
-                  { mark: "G", issuer: "SP", title: "Gas Service", sub: "Gas Installation" },
                 ].map((cert, i) => (
                   <div className="cert" key={i}>
                     <div className="cert-top">
@@ -486,6 +506,19 @@ export default function Home() {
                   </div>
                 ))}
               </div>
+              
+              {/* See More Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                style={{ textAlign: 'center', marginTop: '24px' }}
+              >
+                <a href="/safety" className="btn btn-primary">
+                  See More <I.Arrow className="arrow" />
+                </a>
+              </motion.div>
             </motion.div>
           </div>
         </div>
