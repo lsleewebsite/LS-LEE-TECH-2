@@ -171,7 +171,7 @@ export default function Home() {
               >
                 From semiconductor gas plants to hydrogen trailer servicing, L.S. Lee Technology Pte Ltd
                 delivers safety-critical mechanical solutions backed by decades of frontline
-                experience across South-East Asia.
+                experience.
               </motion.p>
               
               <motion.div 
