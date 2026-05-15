@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import logoImg from '/logo.png'
 
 export default function Layout({ currentPageName, children }) {
   const navItems = ['Home', 'Industries', 'Services', 'Projects', 'Safety', 'Contact']
@@ -111,7 +112,7 @@ export default function Layout({ currentPageName, children }) {
             {/* Company Info */}
             <div>
               <img 
-                src="/logo.png" 
+                src={logo.png}
                 alt="LS Lee Technology" 
                 style={{ 
                   height: '60px',
